@@ -19,10 +19,17 @@ const JourneySupport = () => {
             ← Back to Home
           </Link>
           
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          {/* Warning Banner */}
+          <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-4 mb-6">
+            <p className="text-red-400 font-semibold text-sm text-center">
+              ⚠️ Journey support donations are non-refundable. Please read our refund policy before contributing.
+            </p>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
             🚀 <span className="text-blue-400">Support the Journey</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-300 mb-8 text-center">
             ₹39.99 – Fuel open creation.
           </p>
           

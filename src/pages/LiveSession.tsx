@@ -9,8 +9,9 @@ const LiveSession = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    mobile: '',
     idea: '',
-    timeSlot: ''
+    session: ''
   });
 
   const payForSession = () => {
@@ -25,7 +26,7 @@ const LiveSession = () => {
       title: "Session Booked!",
       description: "Your live session has been scheduled. Check your email for details.",
     });
-    setFormData({ name: '', email: '', idea: '', timeSlot: '' });
+    setFormData({ name: '', email: '', mobile: '', idea: '', session: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -47,6 +48,13 @@ const LiveSession = () => {
             ← Back to Home
           </Link>
           
+          {/* Warning Banner */}
+          <div className="bg-yellow-900/20 border border-yellow-500/50 rounded-lg p-4 mb-6">
+            <p className="text-yellow-400 font-semibold text-sm text-center">
+              ⚠️ Live sessions may be refundable under certain circumstances. Please read our refund policy.
+            </p>
+          </div>
+
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
             💬 <span className="text-pink-400">'slice of stream cake'</span>
           </h1>
@@ -60,9 +68,10 @@ const LiveSession = () => {
               <h2 className="text-2xl font-bold text-pink-400 mb-4">Book a Live Session</h2>
               <p className="text-gray-300 mb-2">
                 Get 20 minutes of live exposure for your idea with community feedback and insights.
+                Only 4 participants per session. We will contact you via provided details.
               </p>
-              <p className="text-red-400 text-sm">
-                ⚠️ This donation is non-refundable
+              <p className="text-yellow-400 text-sm">
+                ⚠️ Live sessions may be refundable under certain circumstances
               </p>
             </div>
             
@@ -77,73 +86,97 @@ const LiveSession = () => {
               </button>
               
               {showForm && (
-                <form onSubmit={handleSubmit} className="space-y-4 border-t border-gray-600 pt-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
-                    />
-                  </div>
+                  <form onSubmit={handleSubmit} className="space-y-4 border-t border-gray-600 pt-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                      />
+                    </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
-                    />
-                  </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                      />
+                    </div>
 
-                  <div>
-                    <label htmlFor="idea" className="block text-sm font-medium text-gray-300 mb-2">
-                      Your Idea (200 characters max)
-                    </label>
-                    <textarea
-                      id="idea"
-                      name="idea"
-                      value={formData.idea}
-                      onChange={handleChange}
-                      required
-                      maxLength={200}
-                      rows={3}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white resize-none"
-                    />
-                    <p className="text-sm text-gray-400 mt-1">{formData.idea.length}/200</p>
-                  </div>
+                    <div>
+                      <label htmlFor="mobile" className="block text-sm font-medium text-gray-300 mb-2">
+                        Mobile Number (+91) *
+                      </label>
+                      <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        value={formData.mobile}
+                        onChange={handleChange}
+                        required
+                        placeholder="+91 XXXXXXXXXX"
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                      />
+                    </div>
 
-                  <div>
-                    <label htmlFor="timeSlot" className="block text-sm font-medium text-gray-300 mb-2">
-                      Preferred Time Slot
-                    </label>
-                    <select
-                      id="timeSlot"
-                      name="timeSlot"
-                      value={formData.timeSlot}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
-                    >
-                      <option value="">Select a time slot</option>
-                      <option value="Saturday 10am">Saturday 10am</option>
-                      <option value="Saturday 4pm">Saturday 4pm</option>
-                      <option value="Sunday 10am">Sunday 10am</option>
-                      <option value="Sunday 4pm">Sunday 4pm</option>
-                    </select>
-                  </div>
+                    <div>
+                      <label htmlFor="idea" className="block text-sm font-medium text-gray-300 mb-2">
+                        Your Idea (300 characters max) *
+                      </label>
+                      <textarea
+                        id="idea"
+                        name="idea"
+                        value={formData.idea}
+                        onChange={handleChange}
+                        required
+                        maxLength={300}
+                        rows={4}
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white resize-none"
+                        placeholder="Describe your idea, project, or what you'd like to discuss..."
+                      />
+                      <p className="text-sm text-gray-400 mt-1">{formData.idea.length}/300</p>
+                    </div>
+
+                    <div>
+                      <label htmlFor="session" className="block text-sm font-medium text-gray-300 mb-2">
+                        Preferred Session (Wednesdays of the month) *
+                      </label>
+                      <select
+                        id="session"
+                        name="session"
+                        value={formData.session}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                      >
+                        <option value="">Select a Wednesday session</option>
+                        <option value="First Wednesday">First Wednesday of the month</option>
+                        <option value="Second Wednesday">Second Wednesday of the month</option>
+                        <option value="Third Wednesday">Third Wednesday of the month</option>
+                        <option value="Fourth Wednesday">Fourth Wednesday of the month</option>
+                      </select>
+                    </div>
+
+                    <div className="bg-blue-900/20 border border-blue-500/50 rounded-lg p-4">
+                      <p className="text-blue-400 text-sm">
+                        📞 We will contact you via the provided email or mobile number to confirm your session details.
+                        Only 4 participants per session are allowed.
+                      </p>
+                    </div>
 
                   <button
                     type="submit"

@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       <Navbar />
-      <div className="pt-16">
+      <div className="pt-16 max-w-7xl mx-auto">
         <Hero />
         <SupportOptions />
         <FAQ />

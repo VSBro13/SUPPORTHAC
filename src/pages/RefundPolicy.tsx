@@ -62,8 +62,10 @@ const RefundPolicy = () => {
                 <ul className="space-y-1 list-disc list-inside ml-4">
                   <li>Sessions may be rescheduled based on availability</li>
                   <li>We reserve the right to decline inappropriate submissions</li>
-                  <li>No refunds will be issued for scheduling conflicts</li>
+                  <li>Limited refunds may be considered for technical issues or cancellations</li>
                   <li>Sessions are conducted on a best-effort basis</li>
+                  <li>Only 4 participants are allowed per session</li>
+                  <li>Refund requests must be made within 24 hours of booking</li>
                 </ul>
               </div>
 

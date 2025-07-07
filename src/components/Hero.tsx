@@ -6,6 +6,18 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative">
+      {/* Warning Banner */}
+      <div className="absolute top-8 left-4 right-4 z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-4">
+            <p className="text-red-400 font-semibold text-sm">
+              ⚠️ All donations are voluntary contributions to support a student-led project. 
+              Please read our terms and refund policy before contributing.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           We're not building just a project — 
@@ -33,6 +45,12 @@ const Hero = () => {
             className="px-8 py-4 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
           >
             Get in Touch
+          </button>
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+          >
+            About Me
           </button>
         </div>
       </div>
