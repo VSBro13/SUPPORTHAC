@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import BackToTop from "@/components/BackToTop";
 
 const RefundPolicy = () => {
   return (
@@ -108,6 +109,7 @@ const RefundPolicy = () => {
           </div>
         </div>
       </div>
+      <BackToTop />
     </div>
   );
 };

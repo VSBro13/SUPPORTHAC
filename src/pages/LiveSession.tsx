@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { toast } from "@/hooks/use-toast";
+import BackToTop from "@/components/BackToTop";
 
 function generateCode() {
   return Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -210,6 +211,7 @@ const LiveSession = () => {
           </div>
         </div>
       </div>
+      <BackToTop />
     </div>
   );
 };
