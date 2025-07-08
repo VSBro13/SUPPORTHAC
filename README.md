@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# SUPPORT HAC
 
-## Project info
+A modern, student-led community support site for the HAC community. Built with Vite, React, TypeScript, Tailwind CSS, and shadcn/ui, it offers a mobile-first, lively, and accessible experience for users seeking help, contributing, or joining live sessions.
 
-**URL**: https://lovable.dev/projects/d8ed393b-9520-44ed-b8b7-e9a0b249de71
+---
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Mobile-first, responsive design**
+- **Modern UI/UX** with custom animations (fade, slide, pop, shimmer)
+- **Express backend** for secure payment code and session logging
+- **Google Sheets integration** for logging contributions and live session requests
+- **Reusable components** (Navbar, Hero, Back to Top, etc.)
+- **Accessible, SEO-friendly** (robots.txt, alt text, semantic HTML)
+- **Easy customization** and open source code
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d8ed393b-9520-44ed-b8b7-e9a0b249de71) and start prompting.
+## Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
+- [Express](https://expressjs.com/) backend (for code/session logging)
+- [Google Sheets API](https://developers.google.com/sheets/api) (optional, for logging)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or bun
 
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
+cd SUPPORT-HAC
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Install dependencies
+npm install
+# or
+bun install
 ```
 
-**Edit a file directly in GitHub**
+### Running the App
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+# Start the frontend (Vite dev server)
+npm run dev
+# or
+bun run dev
+```
 
-**Use GitHub Codespaces**
+### Backend (Payment/Session Logging)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Go to `src/server/codeLoggerServer.js`.
+2. Install backend dependencies:
+   ```sh
+   cd src/server
+   npm install express googleapis cors
+   ```
+3. Start the backend server:
+   ```sh
+   node codeLoggerServer.js
+   ```
+4. (Optional) For Google Sheets logging, add your credentials and Sheet ID as described in the code comments.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+SUPPORT-HAC/
+├── public/           # Static assets (favicon, placeholder.svg, robots.txt)
+├── src/
+│   ├── components/   # Reusable UI components
+│   ├── pages/        # Main pages (CoffeeSupport, JourneySupport, LiveSession, etc.)
+│   ├── server/       # Express backend for logging
+│   └── ...           # Styles, hooks, utils
+├── README.md         # This file
+├── package.json      # Project metadata and scripts
+└── ...
+```
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/d8ed393b-9520-44ed-b8b7-e9a0b249de71) and click on Share -> Publish.
+## Customization & Deployment
 
-## Can I connect a custom domain to my Lovable project?
+- **Frontend:** Edit React components in `src/components` and `src/pages`.
+- **Backend:** Update `src/server/codeLoggerServer.js` for custom logging or integrations.
+- **Styling:** Use Tailwind CSS and custom animation classes in `src/index.css`.
+- **Deployment:**
+  - Deploy frontend with Vercel, Netlify, or your preferred static host.
+  - Deploy backend (if used) on Render, Railway, or any Node.js host.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Contributing
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Pull requests and suggestions are welcome! Please open an issue or PR for any improvements, bug fixes, or new features.
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## Credits
+
+- Built by the SUPPORT HAC community.
+- UI inspired by shadcn/ui and Tailwind CSS.
+- Special thanks to all contributors and supporters!
