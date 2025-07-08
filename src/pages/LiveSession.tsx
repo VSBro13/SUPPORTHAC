@@ -72,76 +72,63 @@ const LiveSession = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base">
+    <div className="h-screen min-h-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base flex flex-col">
       <Navbar />
-      <div className="pt-20 pb-8 px-2 sm:px-4">
-        <div className="max-w-full sm:max-w-2xl mx-auto">
+      <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4">
+        <div className="w-full max-w-md animate-slide-up">
           <Link 
             to="/" 
-            className="inline-block text-pink-400 hover:text-pink-300 mb-6 transition-colors"
+            className="inline-block text-pink-400 hover:text-pink-300 mb-2 transition-colors animate-pop"
           >
             ← Back to Home
           </Link>
-          
           {/* Warning Banner */}
-          <div className="bg-yellow-900/20 border border-yellow-500/50 rounded-lg p-4 mb-6">
-            <p className="text-yellow-400 font-semibold text-sm text-center">
-              ⚠️ Live sessions may be refundable under certain circumstances. Please read our refund policy.
+          <div className="bg-yellow-900/20 border border-yellow-500/50 rounded-lg p-2 mb-2 animate-fade-in">
+            <p className="text-yellow-400 font-semibold text-xs text-center">
+              ⚠️ Live sessions may be refundable under certain circumstances.
             </p>
           </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-center animate-pop">
             💬 <span className="text-pink-400">'slice of stream cake'</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8 text-center">
+          <p className="text-base text-gray-300 mb-3 text-center animate-fade-in">
             ₹69.99 – Book 20 mins live exposure for your idea.
           </p>
-          
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-pink-500/20 rounded-xl p-8">
-            <div className="text-center mb-8">
-              <div className="text-6xl mb-4">💬</div>
-              <h2 className="text-2xl font-bold text-pink-400 mb-4">Book a Live Session</h2>
-              <p className="text-gray-300 mb-2">
-                Get 20 minutes of live exposure for your idea with community feedback and insights.
-                Fill the form after payment to book your session.
+          <div className="bg-gray-800/50 backdrop-blur-sm border border-pink-500/20 rounded-xl p-4 animate-slide-up shadow-xl">
+            <div className="text-center mb-4">
+              <div className="text-4xl mb-2 animate-pop">💬</div>
+              <h2 className="text-lg font-bold text-pink-400 mb-2 animate-fade-in">Book a Live Session</h2>
+              <p className="text-gray-300 mb-1 animate-fade-in">
+                Get 20 minutes of live exposure for your idea.
               </p>
             </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-blue-400">Pay & Book</h3>
-              
+            <div className="space-y-2">
+              <h3 className="text-base font-semibold text-blue-400 animate-pop">Pay & Book</h3>
               <div>
-                <h4 className="text-base font-semibold text-pink-400 mb-2">UPI Payment</h4>
-                <div className="bg-gray-700/50 p-6 rounded-lg text-center">
-                  {/*
-                  <div className="w-32 h-32 bg-gray-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-gray-400">QR Code</span>
-                  </div>
-                  */}
+                <h4 className="text-sm font-semibold text-pink-400 mb-1 animate-pop">UPI Payment</h4>
+                <div className="bg-gray-700/50 p-2 rounded-lg text-center animate-fade-in">
                   <img
                     src="/placeholder.svg"
                     alt="Payment QR Placeholder"
-                    className="w-32 h-32 mx-auto mb-4 rounded-lg object-contain bg-gray-600"
+                    className="w-24 h-24 mx-auto mb-2 rounded-lg object-contain bg-gray-600 animate-shimmer"
                   />
-                  <p className="text-pink-400 font-mono">Scan to Pay</p>
-                  <p className="text-sm text-gray-400 mt-2">₹69.99</p>
-                  <p className="text-green-400 mt-4 font-mono">Your code: <span className="font-bold">{code}</span></p>
-                  <p className="text-xs text-gray-400 mt-1">Please put the generated code in the field 'add note' while paying.</p>
+                  <p className="text-pink-400 font-mono animate-fade-in">Scan to Pay</p>
+                  <p className="text-sm text-gray-400 mt-1 animate-fade-in">₹69.99</p>
+                  <p className="text-green-400 mt-2 font-mono animate-pop">Your code: <span className="font-bold">{code}</span></p>
+                  <p className="text-xs text-gray-400 mt-1 animate-fade-in">Add this code in payment note.</p>
                 </div>
               </div>
-              
               <button
                 onClick={payForSession}
-                className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 disabled:opacity-60"
+                className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 disabled:opacity-60 animate-pop"
                 disabled={loading}
               >
                 {loading ? 'Logging...' : 'Pay ₹69.99 & Book Session'}
               </button>
-              
               {showForm && (
-                  <form onSubmit={handleSubmit} className="space-y-4 border-t border-gray-600 pt-6">
+                  <form onSubmit={handleSubmit} className="space-y-2 border-t border-gray-600 pt-3 animate-fade-in max-h-64 overflow-y-auto">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-1">
                         Full Name *
                       </label>
                       <input
@@ -151,11 +138,11 @@ const LiveSession = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                        className="w-full px-2 py-2 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white text-xs"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-1">
                         Email Address *
                       </label>
                       <input
@@ -165,11 +152,11 @@ const LiveSession = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                        className="w-full px-2 py-2 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white text-xs"
                       />
                     </div>
                     <div>
-                      <label htmlFor="mobile" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="mobile" className="block text-xs font-medium text-gray-300 mb-1">
                         Mobile Number (+91) *
                       </label>
                       <input
@@ -180,12 +167,12 @@ const LiveSession = () => {
                         onChange={handleChange}
                         required
                         placeholder="+91 XXXXXXXXXX"
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                        className="w-full px-2 py-2 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white text-xs"
                       />
                     </div>
                     <div>
-                      <label htmlFor="idea" className="block text-sm font-medium text-gray-300 mb-2">
-                        Your Idea (300 characters max) *
+                      <label htmlFor="idea" className="block text-xs font-medium text-gray-300 mb-1">
+                        Your Idea (max 300 chars) *
                       </label>
                       <textarea
                         id="idea"
@@ -194,15 +181,15 @@ const LiveSession = () => {
                         onChange={handleChange}
                         required
                         maxLength={300}
-                        rows={4}
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white resize-none"
-                        placeholder="Describe your idea, project, or what you'd like to discuss..."
+                        rows={2}
+                        className="w-full px-2 py-2 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white text-xs resize-none"
+                        placeholder="Describe your idea..."
                       />
-                      <p className="text-sm text-gray-400 mt-1">{formData.idea.length}/300</p>
+                      <p className="text-xs text-gray-400 mt-1">{formData.idea.length}/300</p>
                     </div>
                     <div>
-                      <label htmlFor="session" className="block text-sm font-medium text-gray-300 mb-2">
-                        Preferred Session (Wednesdays of the month) *
+                      <label htmlFor="session" className="block text-xs font-medium text-gray-300 mb-1">
+                        Preferred Session *
                       </label>
                       <select
                         id="session"
@@ -210,7 +197,7 @@ const LiveSession = () => {
                         value={formData.session}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white"
+                        className="w-full px-2 py-2 bg-gray-700/50 border border-pink-500/20 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white text-xs"
                       >
                         <option value="">Select a session</option>
                         <option value="1st Wednesday">1st Wednesday</option>
@@ -221,7 +208,7 @@ const LiveSession = () => {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 disabled:opacity-60"
+                      className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 disabled:opacity-60 animate-pop text-xs"
                       disabled={formLoading}
                     >
                       {formLoading ? 'Booking...' : 'Book Session'}
@@ -230,7 +217,6 @@ const LiveSession = () => {
                 )}
             </div>
           </div>
-          <BackToTop />
         </div>
       </div>
     </div>

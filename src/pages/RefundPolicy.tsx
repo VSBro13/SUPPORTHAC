@@ -4,25 +4,25 @@ import BackToTop from "@/components/BackToTop";
 
 const RefundPolicy = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base animate-fade-in">
       <Navbar />
-      <div className="pt-20 pb-8 px-2 sm:px-4">
+      <div className="pt-20 pb-8 px-2 sm:px-4 animate-slide-up">
         <div className="max-w-full sm:max-w-4xl mx-auto">
           <Link 
             to="/" 
-            className="inline-block text-pink-400 hover:text-pink-300 mb-6 transition-colors"
+            className="inline-block text-pink-400 hover:text-pink-300 mb-6 transition-colors animate-pop"
           >
             ← Back to Home
           </Link>
           
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-pop">
             💰 <span className="text-pink-400">Refund Policy</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-300 mb-8 animate-fade-in">
             Clear guidelines on our donation and refund policies
           </p>
           
-          <div className="space-y-8 text-gray-300">
+          <div className="space-y-8 text-gray-300 animate-fade-in">
             <div>
               <p><strong>Effective Date:</strong> August 5, 2025</p>
               <p><strong>Last Updated:</strong> August 5, 2025</p>

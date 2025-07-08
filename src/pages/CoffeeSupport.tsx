@@ -29,75 +29,63 @@ const CoffeeSupport = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base">
+    <div className="h-screen min-h-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base flex flex-col">
       <Navbar />
-      <div className="pt-20 pb-8 px-2 sm:px-4">
-        <div className="max-w-full sm:max-w-2xl mx-auto">
+      <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4">
+        <div className="w-full max-w-md animate-slide-up">
           <Link 
             to="/" 
-            className="inline-block text-pink-400 hover:text-pink-300 mb-4 sm:mb-6 transition-colors"
+            className="inline-block text-pink-400 hover:text-pink-300 mb-2 transition-colors animate-pop"
           >
             ← Back to Home
           </Link>
-          
           {/* Warning Banner */}
-          <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-4 mb-4 sm:mb-6">
-            <p className="text-red-400 font-semibold text-xs sm:text-sm text-center">
-              ⚠️ Coffee contributions are non-refundable. Please read our refund policy before contributing.
+          <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-2 mb-2 animate-fade-in">
+            <p className="text-red-400 font-semibold text-xs text-center">
+              ⚠️ Coffee contributions are non-refundable.
             </p>
           </div>
-
-          <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-center">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-center animate-pop">
             ☕ <span className="text-pink-400">Support with Coffee</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 text-center">
+          <p className="text-base text-gray-300 mb-3 text-center animate-fade-in">
             ₹19.99 – A small cheer to keep going.
           </p>
-          
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-pink-500/20 rounded-xl p-6 sm:p-8">
-            <div className="text-center mb-6 sm:mb-8">
-              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">☕</div>
-              <h2 className="text-xl sm:text-2xl font-bold text-pink-400 mb-3 sm:mb-4">Buy Me a Coffee</h2>
-              <p className="text-gray-300 mb-2">
-                A small contribution to fuel the journey and keep the creativity flowing.
+          <div className="bg-gray-800/50 backdrop-blur-sm border border-pink-500/20 rounded-xl p-4 animate-slide-up shadow-xl">
+            <div className="text-center mb-4">
+              <div className="text-4xl mb-2 animate-pop">☕</div>
+              <h2 className="text-lg font-bold text-pink-400 mb-2 animate-fade-in">Buy Me a Coffee</h2>
+              <p className="text-gray-300 mb-1 animate-fade-in">
+                A small contribution to fuel the journey.
               </p>
-              <p className="text-red-400 text-xs sm:text-sm">
-                ⚠️ This contribution is non-refundable
+              <p className="text-red-400 text-xs animate-fade-in">
+                ⚠️ Non-refundable
               </p>
             </div>
-            
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-2">
               <div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-3 sm:mb-4">UPI Payment</h3>
-                <div className="bg-gray-700/50 p-4 sm:p-6 rounded-lg text-center">
-                  {/*
-                  <div className="w-28 h-28 bg-gray-600 rounded-lg mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                    <span className="text-gray-400">QR Code</span>
-                  </div>
-                  */}
+                <h3 className="text-base font-semibold text-blue-400 mb-2 animate-pop">UPI Payment</h3>
+                <div className="bg-gray-700/50 p-2 rounded-lg text-center animate-fade-in">
                   <img
                     src="/placeholder.svg"
                     alt="Payment QR Placeholder"
-                    className="w-28 h-28 mx-auto mb-3 sm:mb-4 rounded-lg object-contain bg-gray-600"
+                    className="w-24 h-24 mx-auto mb-2 rounded-lg object-contain bg-gray-600 animate-shimmer"
                   />
-                  <p className="text-pink-400 font-mono">Scan to Pay</p>
-                  <p className="text-sm text-gray-400 mt-2">₹19.99</p>
-                  <p className="text-green-400 mt-3 sm:mt-4 font-mono">Your code: <span className="font-bold">{code}</span></p>
-                  <p className="text-xs text-gray-400 mt-1">Please put the generated code in the field 'add note' while paying.</p>
+                  <p className="text-pink-400 font-mono animate-fade-in">Scan to Pay</p>
+                  <p className="text-sm text-gray-400 mt-1 animate-fade-in">₹19.99</p>
+                  <p className="text-green-400 mt-2 font-mono animate-pop">Your code: <span className="font-bold">{code}</span></p>
+                  <p className="text-xs text-gray-400 mt-1 animate-fade-in">Add this code in payment note.</p>
                 </div>
               </div>
-              
               <button
                 onClick={handlePayment}
-                className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 sm:py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 disabled:opacity-60"
+                className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 disabled:opacity-60 animate-pop"
                 disabled={loading}
               >
                 {loading ? 'Logging...' : 'Pay ₹19.99 Online'}
               </button>
             </div>
           </div>
-          
-          <BackToTop />
         </div>
       </div>
     </div>
