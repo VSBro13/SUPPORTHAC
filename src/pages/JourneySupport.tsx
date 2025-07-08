@@ -19,10 +19,10 @@ const JourneySupport = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white text-sm sm:text-base">
       <Navbar />
-      <div className="pt-24 pb-12 px-4">
-        <div className="max-w-2xl mx-auto">
+      <div className="pt-20 pb-8 px-2 sm:px-4">
+        <div className="max-w-full sm:max-w-2xl mx-auto">
           <Link 
             to="/" 
             className="inline-block text-blue-400 hover:text-blue-300 mb-6 transition-colors"
