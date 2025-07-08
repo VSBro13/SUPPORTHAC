@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -11,8 +10,8 @@ const FAQ = () => {
       answer: "It funds designing, building tools, and holding community sessions — it's the fuel behind the progress."
     },
     {
-      question: "What do I get for ₹59.99?",
-      answer: "You get to book a 20-minute live chat to discuss ideas, projects, or just connect with live exposure."
+      question: "What do I get for ₹69.99?",
+      answer: "You get to book a 20-minute live stream to discuss ideas, projects, or just connect with live exposure."
     },
     {
       question: "Is this just for students?",
@@ -24,7 +23,7 @@ const FAQ = () => {
     },
     {
       question: "Can I share my project idea here?",
-      answer: "Yes! The ₹59.99 chat is meant exactly for that — whether it's a rough idea or in-progress project."
+      answer: "Yes! The ₹69.99 chat is meant exactly for that — whether it's a rough idea or in-progress project."
     },
     {
       question: "Is this a mentorship platform?",

@@ -1,10 +1,21 @@
-
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 
+function generateCode() {
+  return Math.random().toString(36).substring(2, 8).toUpperCase();
+}
+
 const CoffeeSupport = () => {
+  const [code, setCode] = useState(generateCode());
+
   const handlePayment = () => {
-    alert("Thank you for your coffee support! ☕");
+    alert(`Thank you for your coffee support! ☕\n\nPlease put the generated code in the field 'add note' while paying.\nYour code: ${code}`);
+    // Save the code to a log file (for example, using an API or localStorage)
+    // TODO: Link this log to a spreadsheet (e.g., Google Sheets API)
+    const prev = localStorage.getItem('coffee_codes') || '';
+    localStorage.setItem('coffee_codes', prev + code + '\n');
+    setCode(generateCode());
   };
 
   return (
@@ -22,7 +33,7 @@ const CoffeeSupport = () => {
           {/* Warning Banner */}
           <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-4 mb-6">
             <p className="text-red-400 font-semibold text-sm text-center">
-              ⚠️ Coffee donations are non-refundable. Please read our refund policy before contributing.
+              ⚠️ Coffee contributions are non-refundable. Please read our refund policy before contributing.
             </p>
           </div>
 
@@ -41,7 +52,7 @@ const CoffeeSupport = () => {
                 A small contribution to fuel the journey and keep the creativity flowing.
               </p>
               <p className="text-red-400 text-sm">
-                ⚠️ This donation is non-refundable
+                ⚠️ This contribution is non-refundable
               </p>
             </div>
             
@@ -54,6 +65,8 @@ const CoffeeSupport = () => {
                   </div>
                   <p className="text-pink-400 font-mono">Scan to Pay</p>
                   <p className="text-sm text-gray-400 mt-2">₹19.99</p>
+                  <p className="text-green-400 mt-4 font-mono">Your code: <span className="font-bold">{code}</span></p>
+                  <p className="text-xs text-gray-400 mt-1">Please put the generated code in the field 'add note' while paying.</p>
                 </div>
               </div>
               

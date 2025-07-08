@@ -1,10 +1,20 @@
-
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import { useState } from "react";
+
+function generateCode() {
+  return Math.random().toString(36).substring(2, 8).toUpperCase();
+}
 
 const JourneySupport = () => {
+  const [code, setCode] = useState(generateCode());
   const handlePayment = () => {
-    alert("Thank you for fueling the journey! 🚀");
+    alert(`Thank you for fueling the journey! 🚀\n\nPlease put the generated code in the field 'add note' while paying.\nYour code: ${code}`);
+    // Save the code to a log file (for example, using an API or localStorage)
+    // TODO: Link this log to a spreadsheet (e.g., Google Sheets API)
+    const prev = localStorage.getItem('journey_codes') || '';
+    localStorage.setItem('journey_codes', prev + code + '\n');
+    setCode(generateCode());
   };
 
   return (
@@ -22,7 +32,7 @@ const JourneySupport = () => {
           {/* Warning Banner */}
           <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-4 mb-6">
             <p className="text-red-400 font-semibold text-sm text-center">
-              ⚠️ Journey support donations are non-refundable. Please read our refund policy before contributing.
+              ⚠️ Journey support contributions are non-refundable. Please read our refund policy before contributing.
             </p>
           </div>
 
@@ -41,7 +51,7 @@ const JourneySupport = () => {
                 Support the open creation movement and help build something meaningful together.
               </p>
               <p className="text-red-400 text-sm">
-                ⚠️ This donation is non-refundable
+                ⚠️ This contribution is non-refundable
               </p>
             </div>
             
@@ -54,6 +64,8 @@ const JourneySupport = () => {
                   </div>
                   <p className="text-blue-400 font-mono">Scan to Pay</p>
                   <p className="text-sm text-gray-400 mt-2">₹39.99</p>
+                  <p className="text-green-400 mt-4 font-mono">Your code: <span className="font-bold">{code}</span></p>
+                  <p className="text-xs text-gray-400 mt-1">Please put the generated code in the field 'add note' while paying.</p>
                 </div>
               </div>
               

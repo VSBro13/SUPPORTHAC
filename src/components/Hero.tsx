@@ -1,4 +1,3 @@
-
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -6,18 +5,6 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative">
-      {/* Warning Banner */}
-      <div className="absolute top-8 left-4 right-4 z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-4">
-            <p className="text-red-400 font-semibold text-sm">
-              ⚠️ All donations are voluntary contributions to support a student-led project. 
-              Please read our terms and refund policy before contributing.
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           We're not building just a project — 

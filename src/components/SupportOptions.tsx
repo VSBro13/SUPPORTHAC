@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const SupportOptions = () => {
@@ -39,7 +38,7 @@ const SupportOptions = () => {
           <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-500/20 rounded-xl p-8 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
             <div className="text-6xl mb-4 text-center">💬</div>
             <h3 className="text-2xl font-bold text-purple-400 mb-2">Book Live Session</h3>
-            <p className="text-3xl font-bold text-white mb-4">₹59.99</p>
+            <p className="text-3xl font-bold text-white mb-4">₹69.99</p>
             <p className="text-gray-300 mb-6">20 mins live exposure for your idea. Get feedback and community insight.</p>
             <Link 
               to="/live-session"

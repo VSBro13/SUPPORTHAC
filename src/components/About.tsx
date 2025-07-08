@@ -1,11 +1,10 @@
-
 const About = () => {
   return (
     <section id="about" className="py-20 px-4 bg-gradient-to-r from-slate-800/50 to-purple-800/50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 mb-4">
-            About Sachin R428
+            About SUPPORT HAC
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-pink-400 to-blue-400 mx-auto rounded-full"></div>
         </div>
@@ -14,13 +13,15 @@ const About = () => {
           <div className="text-center md:text-left">
             <div className="relative inline-block mb-8">
               <img
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=200&h=200&fit=crop&crop=face"
-                alt="Sachin R428"
+                src="/9b8dcb0a-05ef-4fec-bc13-03feb7a25ed3.png"
+                alt="SUPPORT HAC"
                 className="w-48 h-48 rounded-full mx-auto md:mx-0 border-4 border-pink-400 shadow-2xl shadow-pink-500/25"
               />
-              <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl">
-                🚀
-              </div>
+              <img
+                src="/WhatsApp Image 2025-06-25 at 00.32.21_22083f38.jpg"
+                alt="Badge"
+                className="absolute -bottom-2 -right-2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl"
+              />
             </div>
             
             <div className="space-y-4">
@@ -52,9 +53,9 @@ const About = () => {
             
             <div className="text-center">
               <img
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&h=120&fit=crop"
-                alt="Hidden Alley Community"
-                className="mx-auto rounded-lg shadow-lg border border-gray-600"
+                src="/com.png"
+                alt="Hidden Alley Community Logo"
+                className="mx-auto rounded-full shadow-lg border border-gray-600 w-24 h-24"
               />
               <p className="text-sm text-gray-400 italic mt-3">
                 Part of the Hidden Alley Community — built in public, backed by real people.
