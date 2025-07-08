@@ -9,12 +9,22 @@ function generateCode() {
 
 const JourneySupport = () => {
   const [code, setCode] = useState(generateCode());
-  const handlePayment = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handlePayment = async () => {
     alert(`Thank you for fueling the journey! 🚀\n\nPlease put the generated code in the field 'add note' while paying.\nYour code: ${code}`);
-    // Save the code to a log file (for example, using an API or localStorage)
-    // TODO: Link this log to a spreadsheet (e.g., Google Sheets API)
-    const prev = localStorage.getItem('journey_codes') || '';
-    localStorage.setItem('journey_codes', prev + code + '\n');
+    setLoading(true);
+    try {
+      // Send code to backend API for logging (and Google Sheets)
+      await fetch('/api/log-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'journey', code }),
+      });
+    } catch (err) {
+      alert('Failed to log your code. Please try again later.');
+    }
+    setLoading(false);
     setCode(generateCode());
   };
 
@@ -60,9 +70,16 @@ const JourneySupport = () => {
               <div>
                 <h3 className="text-lg font-semibold text-blue-400 mb-4">UPI Payment</h3>
                 <div className="bg-gray-700/50 p-6 rounded-lg text-center">
+                  {/*
                   <div className="w-32 h-32 bg-gray-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
                     <span className="text-gray-400">QR Code</span>
                   </div>
+                  */}
+                  <img
+                    src="/placeholder.svg"
+                    alt="Payment QR Placeholder"
+                    className="w-32 h-32 mx-auto mb-4 rounded-lg object-contain bg-gray-600"
+                  />
                   <p className="text-blue-400 font-mono">Scan to Pay</p>
                   <p className="text-sm text-gray-400 mt-2">₹39.99</p>
                   <p className="text-green-400 mt-4 font-mono">Your code: <span className="font-bold">{code}</span></p>
@@ -72,9 +89,10 @@ const JourneySupport = () => {
               
               <button
                 onClick={handlePayment}
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 disabled:opacity-60"
+                disabled={loading}
               >
-                Pay ₹39.99 Online
+                {loading ? 'Logging...' : 'Pay ₹39.99 Online'}
               </button>
             </div>
           </div>
