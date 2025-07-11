@@ -49,12 +49,14 @@ const Hero = () => {
         >
           Have Questions
         </button>
-        <button 
-          onClick={() => scrollToSection('contact')}
-          className="px-6 py-3 sm:px-8 sm:py-4 bg-purple-500 hover:bg-purple-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 w-full sm:w-auto text-base sm:text-lg tracking-wide"
-        >
-          Get in Touch
-        </button>
+      <a
+  href="https://docs.google.com/forms/d/e/1FAIpQLScC-527SAcO37z9YGq2kMpN83sUmKaI3ZuHX6wYZ6keG0oZLA/viewform?usp=header"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-3 sm:px-8 sm:py-4 bg-purple-500 hover:bg-purple-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 w-full sm:w-auto text-base sm:text-lg tracking-wide inline-block text-center"
+>
+  Get in Touch
+</a>
         <button 
           onClick={() => scrollToSection('about')}
           className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 w-full sm:w-auto text-base sm:text-lg tracking-wide"

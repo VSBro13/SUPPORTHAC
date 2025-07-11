@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SupportOptions from "@/components/SupportOptions";
 import FAQ from "@/components/FAQ";
-import ContactForm from "@/components/ContactForm";
+// import ContactForm from "@/components/ContactForm";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
@@ -19,9 +19,9 @@ const Index = () => {
         <div className="animate-fade-in">
           <FAQ />
         </div>
-        <div className="animate-fade-in">
+        {/* <div className="animate-fade-in">
           <ContactForm />
-        </div>
+        </div> */}
         <div className="animate-fade-in">
           <About />
         </div>

@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 const { google } = require('googleapis');
+const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 4000;
@@ -55,6 +56,7 @@ app.post('/log-code', async (req, res) => {
   fs.appendFileSync(logFile, entry, 'utf8');
   // Log to Google Sheets
   await appendToSheet(`${type}_codes!A:B`, [new Date().toISOString(), code]);
+  await Contribution.create({ code, type });
   res.json({ success: true });
 });
 
@@ -73,6 +75,10 @@ app.post('/log-session', async (req, res) => {
   ]);
   res.json({ success: true });
 });
+
+// MongoDB setup
+const MONGODB_URI = 'mongodb://localhost:27017/shac';
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.listen(PORT, () => {
   console.log(`Code logger server running on http://localhost:${PORT}`);
