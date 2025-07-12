@@ -68,9 +68,9 @@ const CoffeeSupport = () => {
             <div className="flex-1 flex flex-col items-center">
               <div className="w-full max-w-xs">
                 <h3 className="text-lg font-semibold text-blue-400 mb-3 text-center">UPI Payment</h3>
-                <div className="bg-gray-700/50 p-4 rounded-lg">
+                <div className="bg-gray-700/50 p-4 ">
                   <img
-                    src="/placeholder.svg"
+                    src="/19.jpg"
                     alt="Payment QR Code"
                     className="w-32 h-32 mx-auto mb-4 rounded-lg object-contain bg-gray-600"
                   />

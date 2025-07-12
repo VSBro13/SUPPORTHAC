@@ -71,9 +71,9 @@ const JourneySupport = () => {
             <div className="flex-1 md:pl-4 space-y-6 md:space-y-8 flex flex-col items-center">
               <div className="w-full max-w-xs md:max-w-sm">
                 <h3 className="text-lg md:text-xl font-semibold text-blue-400 mb-3 animate-pop">UPI Payment</h3>
-                <div className="bg-gray-700/50 p-4 md:p-6 rounded-lg text-center animate-fade-in">
+                <div className="bg-gray-700/50 p-4 md:p-6  text-center animate-fade-in">
                   <img
-                    src="/placeholder.svg"
+                    src="/39.jpg"
                     alt="Payment QR Code"
                     className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-4 rounded-lg object-contain bg-gray-600 animate-shimmer"
                   />

@@ -102,9 +102,9 @@ IMPORTANT:
               <h3 className="text-base md:text-xl font-semibold text-blue-400 animate-pop">Pay & Book</h3>
               <div className="w-full max-w-xs md:max-w-sm">
                 <h4 className="text-sm md:text-lg font-semibold text-pink-400 mb-1 animate-pop">UPI Payment</h4>
-                <div className="bg-gray-700/50 p-2 md:p-6 rounded-lg text-center animate-fade-in">
+                <div className="bg-gray-700/50 p-2 md:p-6  text-center animate-fade-in">
                   <img
-                    src="/placeholder.svg"
+                    src="/69.jpg"
                     alt="Payment QR Placeholder"
                     className="w-28 h-28 md:w-48 md:h-48 mx-auto mb-2 rounded-lg object-contain bg-gray-600 animate-shimmer"
                   />
