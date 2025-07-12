@@ -13,12 +13,12 @@ const About = () => {
           <div className="text-center md:text-left">
             <div className="relative inline-block mb-8">
               <img
-                src="/9b8dcb0a-05ef-4fec-bc13-03feb7a25ed3.png"
+                src="/smf.png"
                 alt="SUPPORT HAC"
                 className="w-48 h-48 rounded-full mx-auto md:mx-0 border-4 border-pink-400 shadow-2xl shadow-pink-500/25"
               />
               <img
-                src="/WhatsApp Image 2025-06-25 at 00.32.21_22083f38.jpg"
+                src="/fbl.jpg"
                 alt="Badge"
                 className="absolute -bottom-2 -right-2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl"
               />
@@ -40,7 +40,7 @@ const About = () => {
             <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-500/20 rounded-xl p-6">
               <h4 className="text-xl font-bold text-purple-400 mb-3">🎯 Mission</h4>
               <p className="text-gray-300">
-                Creating tools and experiences that empower creators to build, learn, and grow together in an open, collaborative environment.
+                Creating platform and experiences that empower creative students to build, learn, and grow together in an open, collaborative environment.
               </p>
             </div>
             

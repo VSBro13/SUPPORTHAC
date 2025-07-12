@@ -19,7 +19,7 @@ const Hero = () => {
         {/* Image: fill remaining space, flush right */}
         <div className="hidden sm:flex w-[52%] h-auto items-stretch justify-end">
           <img
-            src="/ChatGPT Image Jul 4, 2025, 05_27_45 PM.png"
+            src="/hero.png"
             alt="Community illustration"
             className="h-full w-full max-h-[600px] rounded-2xl shadow-2xl object-cover"
             style={{ marginTop: 0, paddingTop: 0 }}
@@ -28,7 +28,7 @@ const Hero = () => {
         {/* Mobile image: above text, full width */}
         <div className="w-full flex sm:hidden justify-center items-center mb-0 p-0">
           <img
-            src="/ChatGPT Image Jul 4, 2025, 05_27_45 PM.png"
+            src="/hero.png"
             alt="Community illustration"
             className="w-full h-auto max-h-[320px] rounded-2xl shadow-2xl object-cover m-0 p-0"
             style={{ marginTop: 0, paddingTop: 0 }}
