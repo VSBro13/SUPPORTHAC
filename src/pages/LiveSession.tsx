@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import { toast } from "@/hooks/use-toast";
-import BackToTop from "@/components/BackToTop";
+import TheBigBite from "@/pages/TheBigBite";
 
 const generateCode = () => Math.random().toString(36).substring(2, 8).toUpperCase();
 
@@ -14,10 +13,14 @@ const LiveSession = () => {
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      alert("Failed to copy code.");
+    }
   };
 
   // Auto-generate code on component mount
@@ -66,7 +69,7 @@ IMPORTANT:
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base flex flex-col">
       <Navbar />
-      <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 py-4">
+      <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 py-4 overflow-auto">
         <div className="w-full max-w-5xl animate-slide-up">
           <div className="md:flex md:gap-8 md:items-start">
             {/* Left column: all except QR, button, code */}
@@ -96,12 +99,11 @@ IMPORTANT:
                   Get 15 minutes of live exposure for your idea.
                 </p>
                 {/* Link to The Big Bite */}
-                <Link
-                  to="/the-big-bite"
-                  className="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 animate-pop"
-                >
-                  Try THE BIG BITE 🍔
-                </Link>
+                <Link 
+              to="/TheBigBite"
+              className="block w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-lg text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
+            > Try The BBB (Big Bite Bonuce)🍔
+            </Link>
               </div>
             </div>
             {/* Right column: QR, button, code */}
@@ -139,7 +141,7 @@ IMPORTANT:
                 className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 md:py-4 rounded-lg text-base md:text-xl transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 disabled:opacity-60 animate-pop"
                 disabled={loading}
               >
-                {loading ? 'Processing...' : `Payed`}
+                {loading ? 'Processing...' : `Paid`}
               </button>
               {/* "Book Your Session Now" Button (after payment) */}
               {showBookingLink && (

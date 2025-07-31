@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import { toast } from "@/hooks/use-toast";
 import BackToTop from "@/components/BackToTop";
+import { toast } from "@/hooks/use-toast";
 
 const SESSION_AMOUNT = 99.99;
 
