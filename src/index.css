@@ -99,6 +99,11 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  html, body, #root {
+    height: 100vh; /* Add this for full viewport height */
+    min-height: 100vh;
+  }
+
   * {
     @apply border-border;
   }

@@ -50,15 +50,6 @@ const TheBigBite = () => {
   }, [showBookingLink]);
 
   const payForSession = async () => {
-    if (!code) {
-      toast({
-        title: "Error",
-        description: "Booking code not generated. Please refresh the page.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     const alertMessage = `Payment successful! Please click the booking link below to schedule your session.
     
 IMPORTANT: 
@@ -66,56 +57,54 @@ IMPORTANT:
 - Keep this code for reference: ${code}
 - Click the booking link that will appear below`;
 
+    alert(alertMessage);
+    setLoading(true);
     try {
-      setLoading(true);
-      alert(alertMessage);
-      
       // Send code to backend API for logging (and Google Sheets)
-      const response = await fetch('/api/log-code', {
+      await fetch('/api/log-code', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type: 'the-big-bite', code }),
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to log code');
-      }
-
-      setShowBookingLink(true);
     } catch (err) {
       toast({
         title: "Error",
         description: "Failed to process your booking. Please try again.",
         variant: "destructive",
       });
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
+    setShowBookingLink(true);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base flex flex-col">
       <Navbar />
-      <main className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 py-4">
+      <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 py-4 overflow-auto pt-16">
         <div className="w-full max-w-5xl animate-slide-up">
           <div className="md:flex md:gap-8 md:items-start">
             {/* Left column: all except QR, button, code */}
             <div className="flex-1 md:pr-4">
-              <Link 
-                to="/" 
-                className="inline-block text-pink-400 hover:text-pink-300 mb-2 transition-colors animate-pop"
-                aria-label="Back to Home"
-              >
-                ← Back to Home
-              </Link>
-              
-              {/* Warning Banner */}
-              <div className="bg-yellow-900/20 border border-yellow-500/50 rounded-lg p-2 mb-2 animate-fade-in">
-                <p className="text-yellow-400 font-semibold text-xs text-center">
-                  ⚠️ Live sessions may be refundable under certain circumstances. <br /> Don't reload this page after payment.
-                </p>
+              {/* Home Button and Warning Banner side by side - matching LiveSession.tsx */}
+              <div className="flex flex-col sm:flex-row gap-2 mb-2">
+                <Link 
+                  to="/" 
+                  className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center gap-1 w-fit"
+                  aria-label="Back to Home"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  <span>Home</span>
+                </Link>
+                
+                <div className="bg-yellow-900/20 border border-yellow-500/50 rounded-lg p-2 animate-fade-in flex-1">
+                  <p className="text-yellow-400 font-semibold text-xs text-center">
+                    ⚠️ Live sessions may be refundable under certain circumstances. <br /> Don't reload this page after payment.
+                  </p>
+                </div>
               </div>
-              
+
               <h1 className="text-3xl md:text-5xl font-bold mb-4 text-center animate-pop">
                 🍔 <span className="text-pink-400">'THE BIG BITE'</span>
               </h1>
@@ -127,20 +116,20 @@ IMPORTANT:
               <div className="text-center mb-4">
                 <div className="text-4xl md:text-6xl mb-2 animate-pop">🎥</div>
                 <h2 className="text-lg md:text-2xl font-bold text-pink-400 mb-2 animate-fade-in">
-                  Go live, go bold, get followed up
+                  Go live, Go bold, Get followed up
                 </h2>
                 
                 <div className="bg-gray-800/50 p-4 rounded-lg mb-4 text-left animate-fade-in">
                   <h3 className="font-bold text-blue-400 mb-2">✅ What's included:</h3>
                   <ul className="space-y-2 text-sm md:text-base">
                     <li>• 15-minute slot on Twitch livestream</li>
-                    <li className="pl-4">— Pitch or showcase your idea/project/process LIVE</li>
+                    <li className="pl-4">— Pitch or showcase your idea/project/process LIVE.</li>
                     <li>• Follow-up 5-minute check-in the next week</li>
-                    <li className="pl-4">— Continue where you left off, share updates, or close the loop</li>
+                    <li className="pl-4">— Continue where you left off, share updates, or close the loop.</li>
                     <li>• Clean video recording of your segment</li>
-                    <li className="pl-4">— Yours to share, archive, or clip for socials</li>
+                    <li className="pl-4">— Yours to share, archive, or clip for socials.</li>
                     <li>• Chance to earn from live donations</li>
-                    <li className="pl-4">— If your story hits and inspires, you get a share of the live stream support</li>
+                    <li className="pl-4">— If your story hits and inspires, you get a share of the live stream support.</li>
                   </ul>
                 </div>
               </div>
@@ -194,7 +183,7 @@ IMPORTANT:
                 disabled={loading || !code}
                 aria-busy={loading}
               >
-                {loading ? 'Processing...' : `Pay ₹${SESSION_AMOUNT}`}
+                {loading ? 'Processing...' : `Paid `}
               </button>
               
               {showBookingLink && (
@@ -206,7 +195,7 @@ IMPORTANT:
                   </div>
                   
                   <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLScdnlxsAwwrzARWrrAL6cxRoPgMgo1m6koH4cMdxPs6FLzJbQ/viewform?usp=sharing&ouid=112636506222132879196"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScYctvPT_QATPdO4trwLqnRhtQvln8H9SRm5Cf5VeRj0THiwg/viewform?usp=header"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 animate-pop"
@@ -227,7 +216,7 @@ IMPORTANT:
             </div>
           </div>
         </div>
-      </main>
+      </div>
       <BackToTop />
     </div>
   );

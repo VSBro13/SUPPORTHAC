@@ -69,23 +69,31 @@ IMPORTANT:
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-sm sm:text-base flex flex-col">
       <Navbar />
-      <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 py-4 overflow-auto">
+      <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4 py-4 overflow-auto pt-16">
         <div className="w-full max-w-5xl animate-slide-up">
           <div className="md:flex md:gap-8 md:items-start">
             {/* Left column: all except QR, button, code */}
             <div className="flex-1 md:pr-4">
-              <Link 
-                to="/" 
-                className="inline-block text-pink-400 hover:text-pink-300 mb-2 transition-colors animate-pop"
-              >
-                ← Back to Home
-              </Link>
-              {/* Warning Banner */}
-              <div className="bg-yellow-900/20 border border-yellow-500/50 rounded-lg p-2 mb-2 animate-fade-in">
-                <p className="text-yellow-400 font-semibold text-xs text-center">
-                  ⚠️ Live sessions may be refundable under certain circumstances. <br /> Don't reload this page after payment.
-                </p>
+              {/* Home Button and Warning Banner side by side */}
+              <div className="flex flex-col sm:flex-row gap-2 mb-2">
+                <Link 
+                  to="/" 
+                  className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center gap-1 w-fit"
+                  aria-label="Back to Home"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  <span>Home</span>
+                </Link>
+                
+                <div className="bg-yellow-900/20 border border-yellow-500/50 rounded-lg p-2 animate-fade-in flex-1">
+                  <p className="text-yellow-400 font-semibold text-xs text-center">
+                    ⚠️ Live sessions may be refundable under certain circumstances. <br /> Don't reload this page after payment.
+                  </p>
+                </div>
               </div>
+
               <h1 className="text-3xl md:text-5xl font-bold mb-4 text-center animate-pop">
                 💬 <span className="text-pink-400">'slice of stream cake'</span>
               </h1>
@@ -100,10 +108,11 @@ IMPORTANT:
                 </p>
                 {/* Link to The Big Bite */}
                 <Link 
-              to="/TheBigBite"
-              className="block w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-lg text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
-            > Try The BBB (Big Bite Bonuce)🍔
-            </Link>
+                  to="/TheBigBite"
+                  className="block w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-lg text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
+                > 
+                  Try The BBB (Big Bite Bonuce)🍔
+                </Link>
               </div>
             </div>
             {/* Right column: QR, button, code */}
