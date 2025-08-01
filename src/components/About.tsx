@@ -13,14 +13,14 @@ const About = () => {
           <div className="text-center md:text-left">
             <div className="relative inline-block mb-8">
               <img
-                src="/smf.png"
-                alt="SUPPORT HAC"
-                className="w-48 h-48 rounded-full mx-auto md:mx-0 border-4 border-pink-400 shadow-2xl shadow-pink-500/25"
+              src="/smf.png"
+              alt="SUPPORT HAC"
+              className="w-48 h-48 rounded-full mx-auto md:mx-0 border-4 border-pink-400 shadow-2xl shadow-pink-500/25"
               />
               <img
-                src="/fbl.jpg"
-                alt="Badge"
-                className="absolute -bottom-2 -right-2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl"
+              src="/fbl.jpg"
+              alt="Badge"
+              className="absolute -bottom-2 -right-2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl border-2 border-white"
               />
             </div>
             

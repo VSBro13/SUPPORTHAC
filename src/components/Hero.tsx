@@ -9,8 +9,8 @@ const Hero = () => {
         {/* Text content */}
         <div className="flex flex-col justify-center items-start text-left sm:w-[48%] px-4 sm:px-8">
           <h1 className="text-3xl sm:text-6xl md:text-7xl font-extrabold mb-4 sm:mb-8 leading-tight tracking-tight text-white drop-shadow-lg">
-            We're not building just a project —
-            <span className="block sm:inline text-pink-400"> we're building a movement</span>
+            We're not building just a project <br /> 
+            <span className="block sm:inline text-pink-400"> We're building a movement</span>
           </h1>
           <p className="text-lg sm:text-2xl md:text-3xl text-gray-200 mb-6 sm:mb-10 max-w-2xl">
             A community of builders, learners & dreamers. Every bit of support builds the foundation.
