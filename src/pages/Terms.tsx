@@ -35,7 +35,10 @@ const Terms = () => {
               <ul className="space-y-2 list-disc list-inside">
                 <li>All payments made through this page are considered donations intended to support the ongoing student-led project.</li>
                 <li>Contributions under "☕ Coffee" and "Support the Journey" are non-refundable under all circumstances, including accidental or duplicate payments. These are symbolic gestures of encouragement, not purchases or subscriptions.</li>
-                <li>The ₹69.99 contribution includes 💬 'slice of stream cake' — a 20-minute live stream feature, where your idea gets shared or discussed on a live session to provide exposure, feedback, or community insight. Participants will also be provided with a video recording of their session.</li>
+                <li>The ₹69.99 contribution includes 💬 'slice of stream cake' — a 15-minute live stream feature, where your idea gets shared or discussed on a live session to provide exposure, feedback, or community insight. Participants will also be provided with a video recording of their session.</li>
+                <li>
+                  The ₹99.99 contribution includes 🍔 'THE BIG BITE' — a full-month pass: you get a 15-minute feature in Week 1, plus 5-minute check-ins in Weeks 2–4 to update your journey. You’ll also receive a clean recording of your first appearance and have a chance to earn from stream donations.
+                </li>
                 <li>By donating, you acknowledge that the purpose is to support open creation and experimentation — not to receive goods, services, or guaranteed outcomes.</li>
               </ul>
             </section>

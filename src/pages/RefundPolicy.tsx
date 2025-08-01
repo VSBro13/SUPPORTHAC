@@ -39,6 +39,7 @@ const RefundPolicy = () => {
                   <li>☕ Coffee donations (₹19.99)</li>
                   <li>🚀 Support the Journey donations (₹39.99)</li>
                   <li>💬 'slice of stream cake' sessions (₹69.99)</li>
+                  <li>🍔 'THE BIG BITE' (₹99.99)</li>
                   <li>Accidental or duplicate payments</li>
                   <li>Change of mind after payment</li>
                   <li>Technical issues during payment</li>
@@ -58,7 +59,7 @@ const RefundPolicy = () => {
 
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-pink-400 mb-3">3. Live Session Policy</h3>
-                <p className="mb-2">For ₹69.99 Live Session contributions:</p>
+                <p className="mb-2">For ₹69.99 & ₹99.99 Live Session contributions:</p>
                 <ul className="space-y-1 list-disc list-inside ml-4">
                   <li>Sessions may be rescheduled based on availability</li>
                   <li>We reserve the right to decline inappropriate submissions</li>
