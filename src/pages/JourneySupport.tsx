@@ -2,103 +2,152 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
 import BackToTop from "@/components/BackToTop";
-
-const generateCode = () => Math.random().toString(36).substring(2, 8).toUpperCase();
+import { toast } from "@/hooks/use-toast";
+import { CheckCircle, Copy, ArrowLeft, AlertTriangle } from "lucide-react";
 
 const JOURNEY_AMOUNT = 39.99;
+
+const generateCode = () => Math.random().toString(36).substring(2, 8).toUpperCase();
 
 const JourneySupport = () => {
   const [code, setCode] = useState("");
   const [copied, setCopied] = useState(false);
 
-  // Auto-generate code on component mount
   useEffect(() => {
     setCode(generateCode());
   }, []);
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    navigator.clipboard.writeText(code)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      })
+      .catch(() => {
+        toast({
+          title: "Copy failed",
+          description: "Couldn't copy to clipboard. Please try again.",
+          variant: "destructive",
+        });
+      });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white text-sm sm:text-base flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white flex flex-col">
       <Navbar />
-      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-6">
-        <div className="w-full max-w-5xl animate-slide-up">
-          <div className="md:flex md:gap-8 md:items-start">
-            {/* Left column: content */}
-            <div className="flex-1 md:pr-4">
-              <Link 
-                to="/" 
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-4 transition-colors animate-pop"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
-                </svg>
-                Back to Home
-              </Link>
-              
-              {/* Warning Banner */}
-              <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-3 mb-4 animate-fade-in">
-                <p className="text-red-400 font-semibold text-sm text-center">
-                  ⚠️ Journey support contributions are non-refundable.
-                </p>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center animate-pop">
-                🚀 <span className="text-blue-400">Support the Journey</span>
-              </h1>
-              
-              <p className="text-lg md:text-2xl text-gray-300 mb-8 text-center animate-fade-in">
-                ₹{JOURNEY_AMOUNT} – Fuel open creation.
-              </p>
-
-              <div className="text-center mb-6">
-                <div className="text-5xl md:text-6xl mb-4 animate-pop">🚀</div>
-                <h2 className="text-xl md:text-2xl font-bold text-blue-400 mb-3 animate-fade-in">Fuel the Mission</h2>
-                <p className="text-gray-300 mb-2 animate-fade-in">
-                  Support the open creation movement.
-                </p>
-                <p className="text-red-400 text-sm animate-fade-in">
-                  ⚠️ Non-refundable contribution
-                </p>
-              </div>
-            </div>
-
-            {/* Right column: payment section */}
-            <div className="flex-1 md:pl-4 space-y-6 md:space-y-8 flex flex-col items-center">
-              <div className="w-full max-w-xs md:max-w-sm">
-                <h3 className="text-lg md:text-xl font-semibold text-blue-400 mb-3 animate-pop">UPI Payment</h3>
-                <div className="bg-gray-700/50 p-4 md:p-6  text-center animate-fade-in">
-                  <img
-                    src="/39.jpg"
-                    alt="Payment QR Code"
-                    className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-4 rounded-lg object-contain bg-gray-600 animate-shimmer"
-                  />
-                  <p className="text-blue-400 font-mono text-sm md:text-base animate-fade-in">Scan to Pay</p>
-                  <p className="text-lg md:text-xl text-gray-300 mt-2 animate-fade-in">₹{JOURNEY_AMOUNT}</p>
-                  
-                  <div 
-                    className="mt-4 p-2 bg-gray-800/50 rounded-lg cursor-pointer group"
-                    onClick={copyToClipboard}
-                  >
-                    <p className="text-green-400 font-mono text-sm md:text-base animate-pop">
-                      Your code: <span className="font-bold">{code}</span>
-                    </p>
-                    <p className="text-xs text-gray-400 mt-1 group-hover:text-blue-300 transition">
-                      {copied ? 'Copied!' : 'Click to copy'}
-                    </p>
-                  </div>
-                  
-                  <p className="text-xs md:text-sm text-gray-400 mt-3 animate-fade-in">
-                    Add this code in payment note for reference.
+      <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 pt-20">
+        <div className="w-full max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left column: Content */}
+            <div className="space-y-6">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to="/" 
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Home
+                </Link>
+                
+                <div className="flex-1 flex items-center bg-red-900/30 border border-red-500/50 rounded-lg px-4 py-2">
+                  <AlertTriangle className="w-5 h-5 text-red-400 mr-2 flex-shrink-0" />
+                  <p className="text-red-300 text-sm">
+                    Journey support contributions are non-refundable
                   </p>
                 </div>
               </div>
 
+              <div className="text-center space-y-4">
+                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                  <span className="text-white">🚀</span> SUPPORT THE JOURNEY
+                </h1>
+                
+                <p className="text-xl text-gray-300">
+                  <span className="font-semibold text-blue-400">₹{JOURNEY_AMOUNT}</span> – Fuel open creation
+                </p>
+              </div>
               
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold">Support open creation</h3>
+                      <p className="text-gray-400 text-sm">Your contribution helps sustain this experimental project</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold">Community-driven</h3>
+                      <p className="text-gray-400 text-sm">Be part of building something unique</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold">Voluntary contribution</h3>
+                      <p className="text-gray-400 text-sm">This is a donation, not a purchase</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right column: Payment */}
+            <div className="space-y-6">
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-6">
+                <h2 className="text-xl font-semibold text-center text-blue-400">
+                  Make Your Contribution
+                </h2>
+                
+                <div className="space-y-4">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="/39.jpg"
+                      alt="UPI Payment QR Code"
+                      className="w-48 h-48 rounded-lg border-2 border-gray-700 object-cover"
+                      loading="lazy"
+                    />
+                    <p className="mt-2 text-gray-300">Scan QR code to pay ₹{JOURNEY_AMOUNT}</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div 
+                      className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 cursor-pointer transition-colors hover:bg-gray-800/70 active:bg-gray-800"
+                      onClick={copyToClipboard}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => e.key === 'Enter' && copyToClipboard()}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-xs text-gray-400">Reference Code</p>
+                          <p className="font-mono text-lg font-bold text-green-400">{code}</p>
+                        </div>
+                        <div className="flex items-center gap-1 text-sm">
+                          {copied ? (
+                            <>
+                              <CheckCircle className="w-4 h-4 text-green-400" />
+                              <span className="text-green-400">Copied</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-4 h-4 text-gray-400" />
+                              <span className="text-gray-400">Copy</span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-500 text-center">
+                      Include this code in your payment note
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
