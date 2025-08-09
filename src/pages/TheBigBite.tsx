@@ -91,11 +91,11 @@ const TheBigBite = () => {
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  to="/" 
+                  to="/live-session" 
                   className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  Back to Home
+                  Go Back 
                 </Link>
                 
                 <div className="flex-1 flex items-center bg-yellow-900/30 border border-yellow-500/50 rounded-lg px-4 py-2">

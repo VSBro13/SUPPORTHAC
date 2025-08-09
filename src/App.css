@@ -3,20 +3,23 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  min-height: 100vh; /* Add this line */
+  min-height: 100vh;
+  background-color: hsl(235, 100%, 15%);
+  color: hsl(0, 0%, 100%);
 }
 
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms, transform 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em hsl(27, 96%, 55%, 0.7));
+  transform: scale(1.05);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em hsl(195, 90%, 50%, 0.7));
 }
 
 @keyframes logo-spin {
@@ -36,8 +39,12 @@
 
 .card {
   padding: 2em;
+  background-color: hsl(235, 30%, 25%);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px hsl(27, 96%, 55%, 0.2);
+  color: hsl(0, 0%, 100%);
 }
 
 .read-the-docs {
-  color: #888;
+  color: hsl(195, 90%, 70%);
 }

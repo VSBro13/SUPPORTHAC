@@ -51,11 +51,11 @@ const About = () => {
               </p>
             </div>
             
-            <div className="text-center">
+            <div className="text-center ">
               <img
                 src="/com.png"
                 alt="Hidden Alley Community Logo"
-                className="mx-auto rounded-full shadow-lg border border-gray-600 w-24 h-24"
+                className="mx-auto rounded-full shadow-lg border border-gray-600 w-24 h-24 "
               />
               <p className="text-sm text-gray-400 italic mt-3">
                 Part of the Hidden Alley Community — built in public, backed by real people.
