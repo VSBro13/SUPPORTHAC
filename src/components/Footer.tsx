@@ -16,13 +16,13 @@ const Footer = () => {
             <Link to="/refund-policy" className="text-gray-400 hover:text-pink-400 transition-colors">
               Refund Policy
             </Link>
-            <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
+            <a href="https://discord.gg/adgrhgb6yS" className="text-gray-400 hover:text-pink-400 transition-colors">
               Discord
             </a>
             <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
               Twitch
             </a>
-            <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
+            <a href="https://www.instagram.com/sachinr428" className="text-gray-400 hover:text-pink-400 transition-colors">
               Instagram
             </a>
           </div>
