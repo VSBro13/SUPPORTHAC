@@ -35,7 +35,7 @@ A modern, student-led community support site for the HAC community. Built with V
 
 ```sh
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone (https://github.com/VSBro13/SUPPORTHAC)
 cd SUPPORT-HAC
 
 # Install dependencies
