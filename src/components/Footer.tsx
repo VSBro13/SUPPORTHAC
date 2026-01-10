@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-gray-400">© 2025 sachin R428 - Built in public</p>
+            <p className="text-gray-400">sachinr428 - Built in public (2025 - ∞)</p>
           </div>
           <div className="flex space-x-6">
             <Link to="/terms" className="text-gray-400 hover:text-pink-400 transition-colors">

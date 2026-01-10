@@ -8,41 +8,27 @@ const SupportOptions = () => {
           <span className="text-pink-400">Support</span> Options
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-pink-500/20 rounded-xl p-8 hover:border-pink-500/40 transition-all duration-300 hover:scale-105">
-            <div className="text-6xl mb-4 text-center">☕</div>
-            <h3 className="text-2xl font-bold text-pink-400 mb-2">Support with Coffee</h3>
-            <p className="text-3xl font-bold text-white mb-4">₹19.99</p>
+        <div className="grid md:grid-cols-2 gap-2 place-items-center">
+          <div className="max-w-sm w-full bg-gray-800/50 backdrop-blur-sm border border-blue-500/20 rounded-xl p-8 hover:border-blue-500/40 transition-all duration-300 hover:scale-105">
+            <div className="text-6xl mb-4 text-center">❤</div>
+            <h3 className="text-2xl font-bold text-blue-400 mb-2">Support </h3>
             <p className="text-gray-300 mb-6">A small cheer to keep going. Perfect for showing appreciation for the work being done.</p>
             <Link 
-              to="/coffee"
-              className="block w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 rounded-lg text-center transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25"
-            >
-              Buy Coffee
-            </Link>
-          </div>
-
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-blue-500/20 rounded-xl p-8 hover:border-blue-500/40 transition-all duration-300 hover:scale-105">
-            <div className="text-6xl mb-4 text-center">🚀</div>
-            <h3 className="text-2xl font-bold text-blue-400 mb-2">Support Journey</h3>
-            <p className="text-3xl font-bold text-white mb-4">₹39.99</p>
-            <p className="text-gray-300 mb-6">Fuel open creation and experimentation. Help build the movement forward.</p>
-            <Link 
-              to="/journey"
+              to="/support"
               className="block w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg text-center transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
             >
-              Support Journey
+               Support
             </Link>
           </div>
 
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-500/20 rounded-xl p-8 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
+<div className="max-w-sm w-full bg-gray-800/50 cursor-not-allowed pointer-events-none backdrop-blur-sm border border-purple-500/20 rounded-xl p-8 opacity-60 hover:scale-105">
             <div className="text-6xl mb-4 text-center">💬</div>
             <h3 className="text-2xl font-bold text-purple-400 mb-2">Book Live Session</h3>
-            <p className="text-3xl font-bold text-white mb-4">₹69.99</p>
-            <p className="text-gray-300 mb-6">15 mins live exposure for your idea. Get feedback and community insight.</p>
+            <p className="text-gray-300 mb-6">Coming Soon</p><br />
+            <br />
             <Link 
-              to="/live-session"
-              className="block w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-lg text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
+              to="/--"
+              className="block w-full  cursor-not-allowed bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-lg text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
             >
               Book Session
             </Link>

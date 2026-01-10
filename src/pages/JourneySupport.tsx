@@ -52,14 +52,14 @@ const JourneySupport = () => {
                 <div className="flex-1 flex items-center bg-red-900/30 border border-red-500/50 rounded-lg px-4 py-2">
                   <AlertTriangle className="w-5 h-5 text-red-400 mr-2 flex-shrink-0" />
                   <p className="text-red-300 text-sm">
-                    Journey support contributions are non-refundable
+                   with Second Cup support contributions are non-refundable
                   </p>
                 </div>
               </div>
 
               <div className="text-center space-y-4">
                 <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                  <span className="text-white">🚀</span> SUPPORT THE JOURNEY
+                  <span className="text-white">🍜</span> SUPPORT with Second Cup
                 </h1>
                 
                 <p className="text-xl text-gray-300">

@@ -4,7 +4,7 @@ const About = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 mb-4">
-            About SUPPORT HAC
+            About Support Sachin
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-pink-400 to-blue-400 mx-auto rounded-full"></div>
         </div>
@@ -14,14 +14,14 @@ const About = () => {
             <div className="relative inline-block mb-8">
               <img
               src="/smf.png"
-              alt="SUPPORT HAC"
+              alt="Support Sachin"
               className="w-48 h-48 rounded-full mx-auto md:mx-0 border-4 border-pink-400 shadow-2xl shadow-pink-500/25"
               />
-              <img
+              {/* <img
               src="/fbl.jpg"
               alt="Badge"
               className="absolute -bottom-2 -right-2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl border-2 border-white"
-              />
+              /> */}
             </div>
             
             <div className="space-y-4">
@@ -31,7 +31,7 @@ const About = () => {
                 Discord first. Everything else after.
               </p>
               <p className="text-gray-400">
-                Student-led • Open Source • Built in Public
+                Student-led • Built in Public
               </p>
             </div>
           </div>
@@ -51,15 +51,22 @@ const About = () => {
               </p>
             </div>
             
-            <div className="text-center ">
+            <div className="text-center border-2 border-yellow-500/30 rounded-xl p-6 bg-gray-800/50 backdrop-blur-sm">
               <img
-                src="/com.png"
-                alt="Hidden Alley Community Logo"
-                className="mx-auto rounded-full shadow-lg border border-gray-600 w-24 h-24 "
+                src="/logo.png"
+                alt="Far Thinker Community Logo"
+                className="mx-auto rounded-full shadow-lg border-2 border-yellow-600 w-24 h-24 "
               />
-              <p className="text-sm text-gray-400 italic mt-3">
-                Part of the Hidden Alley Community — built in public, backed by real people.
+              <p className="text-sm text-white  bold italic mt-3">
+Far Thinkers is a community where ideas move forward, perspectives meet, and people grow together with clarity, honest feedback, and strong support.
               </p>
+              <div className="join-container text-center mt-4 align-center">
+                <button type="button"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-1 transition cursor-default">
+                  <a href="https://discord.gg/adgrhgb6yS" className="join-link">Join  Community
+                  </a>
+                </button>
+              </div>
             </div>
           </div>
         </div>

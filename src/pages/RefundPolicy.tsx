@@ -37,7 +37,7 @@ const RefundPolicy = () => {
                 <p className="mb-2">This includes but is not limited to:</p>
                 <ul className="space-y-1 list-disc list-inside ml-4">
                   <li>☕ Coffee donations (₹19.99)</li>
-                  <li>🚀 Support the Journey donations (₹39.99)</li>
+                  <li>🍜 Support with Second Cup donations (₹39.99)</li>
                   <li>💬 'slice of stream cake' sessions (₹69.99)</li>
                   <li>🍔 'THE BIG BITE' (₹99.99)</li>
                   <li>Accidental or duplicate payments</li>

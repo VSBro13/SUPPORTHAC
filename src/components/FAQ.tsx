@@ -48,7 +48,7 @@ const FAQ = () => {
     },
     {
       question: "What's the difference between the ₹69.99 and ₹99.99 options?",
-      answer: "₹69.99 is a one-time 15-minute stream slot. ₹99.99 is a full-month pass: you get that same 15-minute feature in Week 1, plus 5-minute check-ins in Weeks 2–4 to update your journey."
+      answer: "₹69.99 is a one-time 15-minute stream slot. ₹99.99 is a full-month pass: you get that same 15-minute feature in Week 1, plus 5-minute check-ins in Weeks 2–4 to update yourwith Second Cup."
     },
     {
       question: "How does the ₹99.99 monthly pass work exactly?",
@@ -56,7 +56,7 @@ const FAQ = () => {
     },
     {
       question: "What do I use the weekly check-ins for?",
-      answer: "To keep momentum. Each 5-minute segment is your space to share progress, wins, problems, or changes — whatever’s relevant to your build journey."
+      answer: "To keep momentum. Each 5-minute segment is your space to share progress, wins, problems, or changes — whatever’s relevant to your buildwith Second Cup."
     },
     {
       question: "Can I earn through the stream with the ₹99.99 plan?",

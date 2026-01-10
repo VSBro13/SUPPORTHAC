@@ -8,10 +8,11 @@ import NotFound from "./pages/NotFound";
 import CoffeeSupport from "./pages/CoffeeSupport";
 import JourneySupport from "./pages/JourneySupport";
 import LiveSession from "./pages/LiveSession";
+import Support from "./pages/support";
 import Terms from "./pages/Terms";
 import RefundPolicy from "./pages/RefundPolicy";
 import TheBigBite from "@/pages/TheBigBite";
-
+import Cookie from "./pages/cookie";
 const queryClient = new QueryClient();
 
 function App() {
@@ -28,7 +29,9 @@ function App() {
             <Route path="/live-session" element={<LiveSession />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/support" element={<Support />} />
             <Route path="/TheBigBite" element={<TheBigBite />} />
+            <Route path="/cookie" element={<Cookie />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

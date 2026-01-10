@@ -9,7 +9,7 @@ const COFFEE_AMOUNT = 19.99;
 
 const generateCode = () => Math.random().toString(36).substring(2, 8).toUpperCase();
 
-const CoffeeSupport = () => {
+const Cookie = () => {
   const [code, setCode] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -56,16 +56,13 @@ const CoffeeSupport = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="text-center space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-                  <span className="text-white">☕</span> SUPPORT WITH COFFEE
-                </h1>
-                
-                <p className="text-xl text-gray-300">
-                  <span className="font-semibold text-pink-400">₹{COFFEE_AMOUNT}</span> – A small cheer to keep going
-                </p>
-              </div>
+<h1 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
+  <span className="text-white">🍪</span>
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
+    SUPPORT WITH A COOKIE
+  </span>
+</h1>
+ 
               
               <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-4">
                 <div className="space-y-3">
@@ -149,4 +146,4 @@ const CoffeeSupport = () => {
   );
 };
 
-export default CoffeeSupport;
+export default Cookie;
