@@ -123,3 +123,95 @@
   60% { transform: scale(1.03); opacity: 1; }
   100% { transform: scale(1); }
 }
+
+
+
+/* Shared recommended animation */
+.recommended {
+  animation: recommendPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes recommendPulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--glow);
+  }
+  70% {
+    box-shadow: 0 0 0 14px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Purple variant */
+.recommended-purple {
+  --glow: rgba(168, 85, 247, 0.45);
+}
+
+/* Yellow variant */
+.recommended-yellow {
+  --glow: rgba(234, 179, 8, 0.45);
+}
+
+/* Badge base */
+.badge {
+  position: absolute;
+  top: -14px;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: white;
+  z-index: 20;
+  animation: badgeFloat 2.4s ease-in-out infinite;
+}
+
+/* Badge colors */
+.badge-purple {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+}
+
+.badge-yellow {
+  background: linear-gradient(135deg, #facc15, #eab308);
+}
+
+@keyframes badgeFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+/* ===== RECOMMENDED RED ===== */
+.recommended-red {
+  animation: redPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes redPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* Red badge */
+.red-badge {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* Shared badge base (only once in app.css) */
+.recommended-badge {
+  position: absolute;
+  top: -14px;
+  right: 16px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  z-index: 999;
+}

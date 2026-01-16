@@ -18,7 +18,7 @@ if (!fs.existsSync(LOGS_DIR)) {
 }
 
 // Google Sheets setup (user must provide credentials and sheet ID)
-const SHEET_ID = process.env.GOOGLE_SHEET_ID || 'YOUR_SHEET_ID_HERE';
+// const SHEET_ID = process.env.GOOGLE_SHEET_ID || '1IQAzdgl_1a2oBzXML2x3_k5zRKXLGtypxoKssvVSeiY';
 const CREDENTIALS_PATH = path.resolve(__dirname, '../../google-credentials.json');
 let sheetsClient = null;
 

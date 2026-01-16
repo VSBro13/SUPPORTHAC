@@ -33,7 +33,7 @@ const CoffeeSupport = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-coffee-900 via-amber-900 to-coffee-900 text-white flex flex-col">
       <Navbar />
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 pt-20">
         <div className="w-full max-w-6xl mx-auto">
@@ -42,14 +42,14 @@ const CoffeeSupport = () => {
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  to="/" 
-                  className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
+                  to="/support" 
+                  className="inline-flex items-center gap-2 bg-coffee-600 hover:bg-coffee-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  Back to Home
+                  Back to Support Options
                 </Link>
                 
-                <div className="flex-1 flex items-center bg-red-900/30 border border-red-500/50 rounded-lg px-4 py-2">
+                <div className="flex-1 flex items-center bg-coffee-900/30 border border-solid border-coffee-500/50 rounded-lg px-4 py-2">
                   <AlertTriangle className="w-5 h-5 text-red-400 mr-2 flex-shrink-0" />
                   <p className="text-red-300 text-sm">
                     Coffee contributions are non-refundable
@@ -58,21 +58,24 @@ const CoffeeSupport = () => {
               </div>
 
               <div className="text-center space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-                  <span className="text-white">☕</span> SUPPORT WITH COFFEE
+                <h1 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
+                  <span className="text-8xl">☕</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-coffee-400 to-amber-400">
+                    SUPPORT WITH COFFEE
+                  </span>
                 </h1>
                 
                 <p className="text-xl text-gray-300">
-                  <span className="font-semibold text-pink-400">₹{COFFEE_AMOUNT}</span> – A small cheer to keep going
+                  <span className="font-semibold text-coffee-400">₹{COFFEE_AMOUNT}</span> – A warm boost to start the journey
                 </p>
               </div>
               
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-4">
+              <div className="bg-gray-800/50 border border-solid border-coffee-500 rounded-xl p-6 space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Fuel with Second Cup</h3>
+                      <h3 className="font-semibold">Fuel with Coffee</h3>
                       <p className="text-gray-400 text-sm">Your contribution helps sustain this student-led project</p>
                     </div>
                   </div>
@@ -85,12 +88,55 @@ const CoffeeSupport = () => {
                     </div>
                   </div>
                 </div>
+                
+                {/* Navigation buttons */}
+                <div className="pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">
+                    Choose different support levels:
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-3">
+                    <Link to="/cookie">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🍪</span>
+                        <span>Cookie</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/journey">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🍜</span>
+                        <span>Second Cup</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/pudding">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🍮</span>
+                        <span>Pudding</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/extra-fuel">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🥤</span>
+                        <span>Extra Fuel</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/nitrous">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>💧</span>
+                        <span>Nitrous</span>
+                      </button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
             
             {/* Right column: Payment */}
             <div className="space-y-6">
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-6">
+              <div className="bg-gray-800/50 border border-solid border-coffee-500 rounded-xl p-6 space-y-6">
                 <h2 className="text-xl font-semibold text-center text-blue-400">
                   Make Your Contribution
                 </h2>
@@ -98,7 +144,7 @@ const CoffeeSupport = () => {
                 <div className="space-y-4">
                   <div className="flex flex-col items-center">
                     <img
-                      src="/19.jpg"
+                      src="/coffee-qr.jpg"
                       alt="UPI Payment QR Code"
                       className="w-48 h-48 rounded-lg border-2 border-gray-700 object-cover"
                       loading="lazy"

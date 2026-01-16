@@ -8,11 +8,14 @@ import NotFound from "./pages/NotFound";
 import CoffeeSupport from "./pages/CoffeeSupport";
 import JourneySupport from "./pages/JourneySupport";
 import LiveSession from "./pages/LiveSession";
-import Support from "./pages/support";
+import Support from "./pages/Support";
 import Terms from "./pages/Terms";
 import RefundPolicy from "./pages/RefundPolicy";
 import TheBigBite from "@/pages/TheBigBite";
-import Cookie from "./pages/cookie";
+import Cookie from "./pages/Cookie";
+import Pudding from "./pages/Pudding";
+import ExtraFuel from "./pages/ExtraFuel";
+import Nitrous from "./pages/Nitrous";
 const queryClient = new QueryClient();
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
             <Route path="/support" element={<Support />} />
             <Route path="/TheBigBite" element={<TheBigBite />} />
             <Route path="/cookie" element={<Cookie />} />
+            <Route path="/pudding" element={<Pudding />} />
+            <Route path="/extra-fuel" element={<ExtraFuel />} />
+            <Route path="/nitrous" element={<Nitrous />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

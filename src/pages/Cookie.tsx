@@ -5,7 +5,7 @@ import BackToTop from "@/components/BackToTop";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle, Copy, ArrowLeft, AlertTriangle } from "lucide-react";
 
-const COFFEE_AMOUNT = 19.99;
+const COOKIE_AMOUNT = 39.99;
 
 const generateCode = () => Math.random().toString(36).substring(2, 8).toUpperCase();
 
@@ -33,7 +33,7 @@ const Cookie = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-900 via-yellow-900 to-yellow-900 text-white flex flex-col">
       <Navbar />
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 pt-20">
         <div className="w-full max-w-6xl mx-auto">
@@ -42,34 +42,40 @@ const Cookie = () => {
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  to="/" 
-                  className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
+                  to="/support" 
+                  className="inline-flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  Back to Home
+                  Back to Support Options
                 </Link>
                 
-                <div className="flex-1 flex items-center bg-red-900/30 border border-red-500/50 rounded-lg px-4 py-2">
+                <div className="flex-1 flex items-center bg-yellow-900/30 border border-dotted border-yellow-500/50 rounded-lg px-4 py-2">
                   <AlertTriangle className="w-5 h-5 text-red-400 mr-2 flex-shrink-0" />
                   <p className="text-red-300 text-sm">
-                    Coffee contributions are non-refundable
+                    Cookie contributions are non-refundable
                   </p>
                 </div>
               </div>
-<h1 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
-  <span className="text-white">🍪</span>
-  <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-    SUPPORT WITH A COOKIE
-  </span>
-</h1>
- 
+
+              <div className="text-center space-y-4">
+                <h1 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
+                  <span className="text-8xl">🍪</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-400">
+                    SUPPORT WITH COOKIE
+                  </span>
+                </h1>
+                
+                <p className="text-xl text-gray-300">
+                  <span className="font-semibold text-yellow-400">₹{COOKIE_AMOUNT}</span> – A sweet treat for the coding journey
+                </p>
+              </div>
               
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-4">
+              <div className="bg-gray-800/50 border border-dotted border-yellow-500 rounded-xl p-6 space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Fuel with Second Cup</h3>
+                      <h3 className="font-semibold">Fuel with Cookie</h3>
                       <p className="text-gray-400 text-sm">Your contribution helps sustain this student-led project</p>
                     </div>
                   </div>
@@ -82,12 +88,55 @@ const Cookie = () => {
                     </div>
                   </div>
                 </div>
+                
+                {/* Navigation buttons */}
+                <div className="pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">
+                    Choose different support levels:
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-3">
+                    <Link to="/coffee">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>☕</span>
+                        <span>Coffee</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/journey">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🍜</span>
+                        <span>Second Cup</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/pudding">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🍮</span>
+                        <span>Pudding</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/extra-fuel">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🥤</span>
+                        <span>Extra Fuel</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/nitrous">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>💧</span>
+                        <span>Nitrous</span>
+                      </button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
             
             {/* Right column: Payment */}
             <div className="space-y-6">
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-6">
+              <div className="bg-gray-800/50 border border-dotted border-yellow-500 rounded-xl p-6 space-y-6">
                 <h2 className="text-xl font-semibold text-center text-blue-400">
                   Make Your Contribution
                 </h2>
@@ -95,12 +144,12 @@ const Cookie = () => {
                 <div className="space-y-4">
                   <div className="flex flex-col items-center">
                     <img
-                      src="/19.jpg"
+                      src="/cookie-qr.jpg"
                       alt="UPI Payment QR Code"
                       className="w-48 h-48 rounded-lg border-2 border-gray-700 object-cover"
                       loading="lazy"
                     />
-                    <p className="mt-2 text-gray-300">Scan QR code to pay ₹{COFFEE_AMOUNT}</p>
+                    <p className="mt-2 text-gray-300">Scan QR code to pay ₹{COOKIE_AMOUNT}</p>
                   </div>
                   
                   <div className="space-y-2">

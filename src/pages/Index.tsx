@@ -16,9 +16,9 @@ const Index = () => {
         <div className="animate-fade-in">
           <SupportOptions />
         </div>
-        <div className="animate-fade-in">
+        {/* <div className="animate-fade-in">
           <FAQ />
-        </div>
+        </div> */}
         {/* <div className="animate-fade-in">
           <ContactForm />
         </div> */}

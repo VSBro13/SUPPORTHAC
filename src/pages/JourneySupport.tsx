@@ -1,15 +1,15 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import { useState, useEffect } from "react";
 import BackToTop from "@/components/BackToTop";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle, Copy, ArrowLeft, AlertTriangle } from "lucide-react";
 
-const JOURNEY_AMOUNT = 39.99;
+const JOURNEY_AMOUNT = 59.99;
 
 const generateCode = () => Math.random().toString(36).substring(2, 8).toUpperCase();
 
-const JourneySupport = () => {
+const Journey = () => {
   const [code, setCode] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -33,7 +33,7 @@ const JourneySupport = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-900 to-green-900 text-white flex flex-col">
       <Navbar />
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 pt-20">
         <div className="w-full max-w-6xl mx-auto">
@@ -42,55 +42,93 @@ const JourneySupport = () => {
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  to="/" 
-                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
+                  to="/support" 
+                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 w-fit"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  Back to Home
+                  Back to Support Options
                 </Link>
                 
-                <div className="flex-1 flex items-center bg-red-900/30 border border-red-500/50 rounded-lg px-4 py-2">
+                <div className="flex-1 flex items-center bg-green-900/30 border border-dashed border-green-500/50 rounded-lg px-4 py-2">
                   <AlertTriangle className="w-5 h-5 text-red-400 mr-2 flex-shrink-0" />
                   <p className="text-red-300 text-sm">
-                   with Second Cup support contributions are non-refundable
+                    Second Cup contributions are non-refundable
                   </p>
                 </div>
               </div>
 
               <div className="text-center space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                  <span className="text-white">🍜</span> SUPPORT with Second Cup
+                <h1 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
+                  <span className="text-8xl">🍜</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-400">
+                    SUPPORT WITH SECOND CUP
+                  </span>
                 </h1>
                 
                 <p className="text-xl text-gray-300">
-                  <span className="font-semibold text-blue-400">₹{JOURNEY_AMOUNT}</span> – Fuel open creation
+                  <span className="font-semibold text-green-400">₹{JOURNEY_AMOUNT}</span> – Extra fuel for the marathon
                 </p>
               </div>
               
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-4">
+              <div className="bg-gray-800/50 border border-dashed border-green-500 rounded-xl p-6 space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Support open creation</h3>
-                      <p className="text-gray-400 text-sm">Your contribution helps sustain this experimental project</p>
+                      <h3 className="font-semibold">Fuel with Second Cup</h3>
+                      <p className="text-gray-400 text-sm">Your contribution helps sustain this student-led project</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Community-driven</h3>
-                      <p className="text-gray-400 text-sm">Be part of building something unique</p>
+                      <h3 className="font-semibold">Symbolic gesture</h3>
+                      <p className="text-gray-400 text-sm">This is a voluntary donation, not a purchase</p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold">Voluntary contribution</h3>
-                      <p className="text-gray-400 text-sm">This is a donation, not a purchase</p>
-                    </div>
+                </div>
+                
+                {/* Navigation buttons */}
+                <div className="pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">
+                    Choose different support levels:
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-3">
+                    <Link to="/coffee">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>☕</span>
+                        <span>Coffee</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/cookie">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🍪</span>
+                        <span>Cookie</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/pudding">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🍮</span>
+                        <span>Pudding</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/extra-fuel">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>🥤</span>
+                        <span>Extra Fuel</span>
+                      </button>
+                    </Link>
+
+                    <Link to="/nitrous">
+                      <button className="min-w-[100px] flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-200">
+                        <span>💧</span>
+                        <span>Nitrous</span>
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -98,7 +136,7 @@ const JourneySupport = () => {
             
             {/* Right column: Payment */}
             <div className="space-y-6">
-              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 space-y-6">
+              <div className="bg-gray-800/50 border border-dashed border-green-500 rounded-xl p-6 space-y-6">
                 <h2 className="text-xl font-semibold text-center text-blue-400">
                   Make Your Contribution
                 </h2>
@@ -106,7 +144,7 @@ const JourneySupport = () => {
                 <div className="space-y-4">
                   <div className="flex flex-col items-center">
                     <img
-                      src="/39.jpg"
+                      src="/secondcup-qr.jpg"
                       alt="UPI Payment QR Code"
                       className="w-48 h-48 rounded-lg border-2 border-gray-700 object-cover"
                       loading="lazy"
@@ -157,4 +195,4 @@ const JourneySupport = () => {
   );
 };
 
-export default JourneySupport;
+export default Journey;
